@@ -5,7 +5,7 @@
 
 //make sure to have pop up for empty id
 
-const base_url = "http://danthedingo.pythonanywhere.com/api/v1/"
+const base_url = "https://danthedingo.pythonanywhere.com/api/v1/"
 
 async function getjokes(category, language) {
     let url = base_url + "jokes" + "?" + "category=" + category + '&' + "language=" + language
