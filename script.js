@@ -22,8 +22,8 @@ async function info() {
     let info = document.createElement("p")
     let info2 = document.createElement("p")
     let infos = await nabinfo(factionname)
-    infoer = infos[0].factionname
-    infoer2 = infos[1].description
+    infoer = infos.factionname
+    infoer2 = infos.description
     
     info2.innerHTML = infoer2
     info.innerHTML = infoer
