@@ -3,7 +3,7 @@
 /* jshint node: true */
 'use strict';
 
-let base_url = "http://danthedingo.pythonanywhere.com/factioninfo/"
+let base_url = "http://localhost:5000/factioninfo/"
 
 async function nabinfo(factionname) {
 
@@ -22,13 +22,17 @@ async function info() {
     let info = document.createElement("p")
     let info2 = document.createElement("p")
     let infos = await nabinfo(factionname)
-    infoer = infos.factionname
-    infoer2 = infos.description
+    let infoer = JSON.parse(infos)
+    let newer = infoer.faction[0]
+    console.log(infos)
+    console.log(newer)
+    //infoer2 = infos[1].description
     
-    info2.innerHTML = infoer2
-    info.innerHTML = infoer
+    //info2.innerHTML = infoer2
+    info.innerHTML = newer
 
     div.appendChild(info)
+    //div.appendChild(info2)
 
 
 }
@@ -41,12 +45,22 @@ async function allinfo() {
         div.removeChild(div.firstChild)
     }
     let factionname = ""
-    let info = document.createElement("p")
+    let description = ""
+    
 
     let infos = await nabinfo(factionname)
+    let x = 2
+    for (let i=0;i<=2;i++){
+        
+        let info = document.createElement("p")
+        info.innerHTML = infos.faction[i].factionname
+        let infoer = document.createElement("p")
+        infoer.innerHTML = infos.description[x].description
 
-    info.innerHTML = infos
-
-    div.appendChild(info)
-
+        div.appendChild(info)
+        div.appendChild(infoer)
+  
+        x-=1
+    }
+ 
 }
