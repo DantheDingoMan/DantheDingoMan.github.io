@@ -20,10 +20,13 @@ async function info() {
     }
     let factionname = document.getElementById('query').value
     let info = document.createElement("p")
-
+    let info2 = document.createElement("p")
     let infos = await nabinfo(factionname)
-
-    info.innerHTML = infos
+    infoer = infos[0].factionname
+    infoer2 = infos[1].description
+    
+    info2.innerHTML = infoer2
+    info.innerHTML = infoer
 
     div.appendChild(info)
 
