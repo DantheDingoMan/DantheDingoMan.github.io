@@ -3,7 +3,7 @@
 /* jshint node: true */
 'use strict';
 
-let base_url = "http://localhost:5000/factioninfo/"
+let base_url = "http://danthedingo.pythonanywhere.com/factioninfo/"
 
 async function nabinfo(factionname) {
 
